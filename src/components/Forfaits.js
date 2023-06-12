@@ -38,7 +38,7 @@ function Forfaits() {
      * Récupère la liste des forfaits que l'utilisateur a déjà acheté.
      */
     function getListeForfaits() {
-        Axios.get(process.env.BASE_URL + "/profilForfait", {
+        Axios.get(process.env.REACT_APP_BASE_URL + "/profilForfait", {
         }).then((response) => {
             if (response.data.Forfait) {
                 const newlistForfaits = [];

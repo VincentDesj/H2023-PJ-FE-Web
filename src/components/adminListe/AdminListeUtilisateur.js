@@ -68,7 +68,7 @@ function AdminListeUtilisateur(props) {
      * @param {number} role rôle assigné à l'utilisateur
      */
     function addUtilisateur(nom, prenom, motDePasse, courriel, telephone, role) {
-        Axios.post(process.env.BASE_URL + "/Admin", {
+        Axios.post(process.env.REACT_APP_BASE_URL + "/Admin", {
             nom: nom,
             prenom: prenom,
             motDePasse: motDePasse,
@@ -94,7 +94,7 @@ function AdminListeUtilisateur(props) {
      * @param {number} role rôle assigné à l'utilisateur
      */
     function modifUtilisateur(id, nom, prenom, motDePasse, courriel, telephone, role) {
-        Axios.put(process.env.BASE_URL + "/Admin", {
+        Axios.put(process.env.REACT_APP_BASE_URL + "/Admin", {
             idUtilisateur: id,
             nom: nom,
             prenom: prenom,
@@ -115,7 +115,7 @@ function AdminListeUtilisateur(props) {
      * @param {number} id id représentant l'utlisateur
      */
     function deleteUtilisateur(id) {
-        Axios.delete(process.env.BASE_URL + "/Admin", {
+        Axios.delete(process.env.REACT_APP_BASE_URL + "/Admin", {
             data: {
                 idUtilisateur: Number(id)
             }
