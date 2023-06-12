@@ -62,7 +62,7 @@ function HomeScreen(props) {
      */
     function login(e) {
         e.preventDefault();
-        Axios.post(process.env.REACT_APP_DOMAIN + "/login", {
+        Axios.post(process.env.REACT_APP_BASE_URL + "/login", {
             courriel: username,
             motDePasse: password,
             captcha: captcha
@@ -81,7 +81,7 @@ function HomeScreen(props) {
      * Retourne un CAPTCHA que l'utilisateur doit vérifier au moment de l'inscription.
      */
     function getCaptcha() {
-        Axios.get(process.env.REACT_APP_DOMAIN + "/captcha", {
+        Axios.get(process.env.REACT_APP_BASE_URL + "/captcha", {
         }).then((response) => {
             if (response.data) {
                 setImgCaptcha(response.data);

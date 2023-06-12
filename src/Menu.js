@@ -43,7 +43,7 @@ function Menu(props) {
      * et par la suite changer l'état de isLoggedIn sur le front-end.
      */
     function Logout() {
-        Axios.get(process.env.REACT_APP_DOMAIN + "/deconnection", {
+        Axios.get(process.env.REACT_APP_BASE_URL + "/deconnection", {
         }).then((response) => {
             props.handleLogAndRole(false, null);
             goToInscription();

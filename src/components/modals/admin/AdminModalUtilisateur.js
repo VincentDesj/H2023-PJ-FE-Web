@@ -95,7 +95,7 @@ function AdminModalUtilisateur(props) {
    * Récupère tout les rôles disponible pourles utilisateurs
    */
   function getListeRole() {
-    Axios.get(process.env.REACT_APP_DOMAIN + "/AdminRole", {
+    Axios.get(process.env.REACT_APP_BASE_URL + "/AdminRole", {
     }).then((response) => {
       if (response.data.Role) {
         const newlistRoles = [];
