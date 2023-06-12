@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .navLink {
+        text-decoration: none;
+        align-self: center;
+        @apply px-4 py-4
+    }
+
+    .white-bx {
+        @apply bg-white border mt-16
+        
+    }
+
+}
