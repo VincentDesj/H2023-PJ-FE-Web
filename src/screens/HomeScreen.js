@@ -28,8 +28,6 @@ function HomeScreen(props) {
     const goToProfil = () => { navigate("/profil"); }
     const goToInscription = () => { navigate("/inscription"); }
 
-    console.log(imgCaptcha)
-
     return (
         <div className='w-1/3'>
             <div className="flex flex-col white-bx ">­­
@@ -62,7 +60,7 @@ function HomeScreen(props) {
      */
     function login(e) {
         e.preventDefault();
-        Axios.post(process.env.REACT_APP_BASE_URL + "/login", {
+        Axios.post(process.env.BASE_URL + "/login", {
             courriel: username,
             motDePasse: password,
             captcha: captcha

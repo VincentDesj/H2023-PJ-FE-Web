@@ -38,7 +38,7 @@ function VideosScreen() {
      * Retourne la liste de tout les forfaits que l'utilisateur possède.
      */
     function getListeForfaitsUtilisateur() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/profilForfait", {
+        Axios.get(process.env.BASE_URL + "/profilForfait", {
         }).then((response) => {
             if (response.data.Forfait) {
                 const newlistForfaits = [];
@@ -62,7 +62,7 @@ function VideosScreen() {
      * Retourne la liste de tout les vidéos liés aux forfaits que l'utilisateur possède.
      */
     function getListeVideosUtilisateur() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/videos", {
+        Axios.get(process.env.BASE_URL + "/videos", {
         }).then((response) => {
             if (response.data.videos) {
                 const newlistVideos = [];

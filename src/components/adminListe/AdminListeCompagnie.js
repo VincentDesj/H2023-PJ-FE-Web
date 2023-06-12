@@ -69,7 +69,7 @@ function AdminListeCompagnie(props) {
      * @param {*} idUtilisateur Utilisateur lié à la compagnie
      */
     function addCompagnie(nom, adresse, noRegistre, courriel, telephone, idUtilisateur) {
-        Axios.post(process.env.REACT_APP_BASE_URL + "/AdminCompagnie", {
+        Axios.post(process.env.BASE_URL + "/AdminCompagnie", {
             idUtilisateur: idUtilisateur,
             nom: nom,
             adresse: adresse,
@@ -95,7 +95,7 @@ function AdminListeCompagnie(props) {
      * @param {*} idUtilisateur Utilisateur lié à la compagnie
      */
     function modifCompagnie(id, nom, adresse, noRegistre, courriel, telephone, idUtilisateur) {
-        Axios.put(process.env.REACT_APP_BASE_URL + "/AdminCompagnie", {
+        Axios.put(process.env.BASE_URL + "/AdminCompagnie", {
             idCompagnie: id,
             nom: nom,
             adresse: adresse,
@@ -116,7 +116,7 @@ function AdminListeCompagnie(props) {
      * @param {number} id id représentant la compagnie
      */
     function deleteCompagnie(id) {
-        Axios.delete(process.env.REACT_APP_BASE_URL + "/AdminCompagnie", {
+        Axios.delete(process.env.BASE_URL + "/AdminCompagnie", {
             data: {
                 idCompagnie: Number(id)
             }

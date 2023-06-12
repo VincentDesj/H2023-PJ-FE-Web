@@ -65,7 +65,7 @@ function Entreprises() {
      * Récupère la liste des entreprise que l'utilisateur possède.
      */
     function getListeEntreprise() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/profilCompagnie", {
+        Axios.get(process.env.BASE_URL + "/profilCompagnie", {
         }).then((response) => {
             if (response.data.Compagnie) {
                 const newlistEntreprises = [];
@@ -95,7 +95,7 @@ function Entreprises() {
      * @param {string} courriel courriel de l'entreprise
      */
     function addNewEntreprise(nom, noRegistre, adresse, telephone, courriel) {
-        Axios.post(process.env.REACT_APP_BASE_URL + "/profilCompagnie", {
+        Axios.post(process.env.BASE_URL + "/profilCompagnie", {
             nom: nom,
             noRegistre: noRegistre,
             adresse: adresse,
@@ -119,7 +119,7 @@ function Entreprises() {
      * @param {number} noRegistreActuel ancien numéro de Registre de l'entreprise
      */
     function modifEntreprise(nom, noRegistre, adresse, telephone, courriel, noRegistreActuel) {
-        Axios.put(process.env.REACT_APP_BASE_URL + "/profilCompagnie", {
+        Axios.put(process.env.BASE_URL + "/profilCompagnie", {
             nom: nom,
             noRegistre: noRegistre,
             adresse: adresse,
@@ -140,7 +140,7 @@ function Entreprises() {
      */
     function deleteEntreprise(noRegistre) {
         console.log(Number(noRegistre));
-        Axios.delete(process.env.REACT_APP_BASE_URL + "/profilCompagnie", {
+        Axios.delete(process.env.BASE_URL + "/profilCompagnie", {
             data: {
                 noRegistre: Number(noRegistre)
             }
