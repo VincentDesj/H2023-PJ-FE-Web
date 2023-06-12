@@ -81,7 +81,7 @@ function HomeScreen(props) {
      * Retourne un CAPTCHA que l'utilisateur doit vérifier au moment de l'inscription.
      */
     function getCaptcha() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/captcha", {
+        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/captcha", {
         }).then((response) => {
             if (response.data) {
                 setImgCaptcha(response.data);
