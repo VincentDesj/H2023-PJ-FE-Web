@@ -95,7 +95,7 @@ function AdminModalVideo(props) {
    * Récupère la liste complète des forfaits dans la BD.
    */
   function getListeForfait() {
-    Axios.get(process.env.REACT_APP_BASE_URL + "/AdminForfait", {
+    Axios.get("https://pc-et-associe-node.herokuapp.com" + "/AdminForfait", {
     }).then((response) => {
       if (response.data.Forfaits) {
         const newlistForfaits = [];
@@ -125,7 +125,7 @@ function AdminModalVideo(props) {
     data.append("description", description);
     data.append("idForfait", forfait);
 
-    Axios.post(process.env.REACT_APP_BASE_URL + "/AdminVideo", data
+    Axios.post("https://pc-et-associe-node.herokuapp.com" + "/AdminVideo", data
     ).then((response) => {
       if (response.data.Video) {
         props.addVideoDone();
@@ -150,7 +150,7 @@ function AdminModalVideo(props) {
     data.append("oldVideoUrl", props.videoModifActuel.videoUrl)
     data.append("idForfait", forfait);
 
-    Axios.put(process.env.REACT_APP_BASE_URL + "/AdminVideo", data
+    Axios.put("https://pc-et-associe-node.herokuapp.com" + "/AdminVideo", data
     ).then((response) => {
       if (response.data.Video) {
         props.modifVideoDone();

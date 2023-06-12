@@ -33,7 +33,7 @@ function ForfaitScreen() {
      * Permet de récupérer la liste des forfaits non-achetés par l'utilisateur.
      */
     function getListeForfaitsNonAchete() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/achatForfaits", {
+        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/achatForfaits", {
         }).then((response) => {
             if (response.data.Forfaits) {
                 const newlistForfaits = [];

@@ -41,7 +41,7 @@ function Utilisateur() {
      * Récupère le profil de l'utilisateur qui est connecté.
      */
     function getUtilisateur() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/profilUtilisateur", {
+        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/profilUtilisateur", {
         }).then((response) => {
             if (response.data.Utilisateur) {
                 setPrenom(response.data.Utilisateur.prenom_utilisateur);
@@ -65,7 +65,7 @@ function Utilisateur() {
      * @param {*} motDePasse mot de passe de l'utilisateur
      */
     function modifUtilisateur(nom, prenom, telephone, motDePasse) {
-        Axios.put(process.env.REACT_APP_BASE_URL + "/profil", {
+        Axios.put("https://pc-et-associe-node.herokuapp.com" + "/profil", {
             nom: nom === undefined ? "" : nom,
             prenom: prenom === undefined ? "" : prenom,
             motDePasse: motDePasse === undefined ? "" : motDePasse,

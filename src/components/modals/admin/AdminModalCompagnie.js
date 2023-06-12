@@ -86,7 +86,7 @@ function AdminModalCompagnie(props) {
    * Récupère tout les utilisateurs sur la BD
    */
   function getListeUtilisateurs() {
-    Axios.get(process.env.REACT_APP_BASE_URL + "/Admin", {
+    Axios.get("https://pc-et-associe-node.herokuapp.com" + "/Admin", {
     }).then((response) => {
       if (response.data.Utilisateurs) {
         const newlistRoles = [];

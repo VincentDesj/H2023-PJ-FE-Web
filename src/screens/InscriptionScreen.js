@@ -51,7 +51,7 @@ function InscriptionScreen(props) {
      */
     function inscription(e) {
         e.preventDefault();
-        Axios.post(process.env.REACT_APP_BASE_URL + "/homeInscription", {
+        Axios.post("https://pc-et-associe-node.herokuapp.com" + "/homeInscription", {
             nom: nom,
             prenom: prenom,
             courriel: courriel,

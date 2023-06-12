@@ -63,7 +63,7 @@ function AdminListeForfait(props) {
      * @param {*} description description du forfait
      */
     function addForfait(nom, type, prix, description) {
-        Axios.post(process.env.REACT_APP_BASE_URL + "/AdminForfait", {
+        Axios.post("https://pc-et-associe-node.herokuapp.com" + "/AdminForfait", {
             nom: nom,
             type: type,
             prix: prix,
@@ -85,7 +85,7 @@ function AdminListeForfait(props) {
      * @param {*} description description du forfait
      */
     function modifForfait(id, nom, type, prix, description) {
-        Axios.put(process.env.REACT_APP_BASE_URL + "/AdminForfait", {
+        Axios.put("https://pc-et-associe-node.herokuapp.com" + "/AdminForfait", {
             idForfait: id,
             nom: nom,
             type: type,
@@ -104,7 +104,7 @@ function AdminListeForfait(props) {
      * @param {number} id id représentant le forfait
      */
     function deleteForfait(id) {
-        Axios.delete(process.env.REACT_APP_BASE_URL + "/AdminForfait", {
+        Axios.delete("https://pc-et-associe-node.herokuapp.com" + "/AdminForfait", {
             data: {
                 idForfait: Number(id)
             }

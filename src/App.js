@@ -50,7 +50,7 @@ function App() {
    * Vérifie si il y a un utilisateur dan la session.
    */
   function getLogin() {
-    Axios.get(process.env.REACT_APP_BASE_URL + "/login", {
+    Axios.get("https://pc-et-associe-node.herokuapp.com" + "/login", {
     }).then((response) => {
       handleLogAndRole(response.data.loggedIn, response.data.hasRole);
     });

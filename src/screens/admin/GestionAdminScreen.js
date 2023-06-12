@@ -71,7 +71,7 @@ function GestionAdminScreen() {
      * Retourne la liste des utilisateurs inscrits dans la BD.
      */
     function getListeAdminUtilisateur() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/Admin", {
+        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/Admin", {
         }).then((response) => {
             if (response.data.Utilisateurs) {
                 const newlistUtilisateurs = [];
@@ -97,7 +97,7 @@ function GestionAdminScreen() {
      * Retourne la liste des compagnies liés aux utilisateurs inscrits dans la BD.
      */
     function getListeAdminCompagnie() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/AdminCompagnie", {
+        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/AdminCompagnie", {
         }).then((response) => {
             if (response.data.Compagnies) {
                 const newlistCompagnies = [];
@@ -124,7 +124,7 @@ function GestionAdminScreen() {
      * Retourne la liste des forfaits inscrits dans la BD.
      */
     function getListeAdminForfait() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/AdminForfait", {
+        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/AdminForfait", {
         }).then((response) => {
             if (response.data.Forfaits) {
                 const newlistForfaits = [];
@@ -149,7 +149,7 @@ function GestionAdminScreen() {
      * Retourne la liste des vidéos inscrits dans la BD.
      */
     function getListeAdminVideo() {
-        Axios.get(process.env.REACT_APP_BASE_URL + "/AdminVideo", {
+        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/AdminVideo", {
         }).then((response) => {
             if (response.data.Videos) {
                 const newlistVideos = [];

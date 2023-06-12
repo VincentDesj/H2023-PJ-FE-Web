@@ -74,7 +74,7 @@ function AdminListeVideo(props) {
      * @param {*} id id de la vidéo à supprimer
      */
     function deleteVideo(id) {
-        Axios.delete(process.env.REACT_APP_BASE_URL + "/AdminVideo", {
+        Axios.delete("https://pc-et-associe-node.herokuapp.com" + "/AdminVideo", {
             data: {
                 idVideo: Number(id)
             }
