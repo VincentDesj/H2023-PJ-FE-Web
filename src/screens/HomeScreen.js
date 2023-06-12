@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -11,19 +11,11 @@ import { useNavigate } from "react-router-dom";
  */
 function HomeScreen(props) {
 
-    useEffect(() => {
-        getCaptcha();
-    }
-        , []);
-
     const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [msgErreur, setMessageErreur] = useState("");
-
-    const [imgCaptcha, setImgCaptcha] = useState();
-    const [captcha, setCaptcha] = useState();
 
     const goToProfil = () => { navigate("/profil"); }
     const goToInscription = () => { navigate("/inscription"); }
@@ -38,10 +30,6 @@ function HomeScreen(props) {
                     <input className="border rounded-2xl p-2" type="email" name="nom" onChange={(e) => { setUsername(e.target.value) }} placeholder='Courriel' required />
                     <label>Mot de passe</label>
                     <input className="border rounded-2xl p-2" type="password" name="motDePasse" onChange={(e) => { setPassword(e.target.value) }} placeholder='Mot de passe' required minLength="6" />
-
-                    <button className='bg-white border border-slate-500 hover:bg-gray-200 text-slate-500 font-bold py-2 px-4 rounded-2xl mt-7' onClick={() => { getCaptcha() }}>Renouveler le Captcha</button>
-                    <div className='py-2 px-4 mt-7' dangerouslySetInnerHTML={{ __html: imgCaptcha }}></div>
-                    <input className="border rounded-2xl p-2" type="text" name="captcha" onChange={(e) => { setCaptcha(e.target.value) }} placeholder='Captcha' required />
 
                     <input className='bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-2xl mt-7' type='submit' value="Connexion" />
                     <button className='bg-white border border-slate-500 hover:bg-gray-200 text-slate-500 font-bold py-2 px-4 rounded-2xl mt-7' onClick={() => { goToInscription() }}>Inscription</button>
@@ -62,30 +50,16 @@ function HomeScreen(props) {
         e.preventDefault();
         Axios.post("https://pc-et-associe-node.herokuapp.com" + "/login", {
             courriel: username,
-            motDePasse: password,
-            captcha: captcha
+            motDePasse: password
         }).then((response) => {
             if (response.data.message) {
                 setMessageErreur(response.data.message);
-                getCaptcha();
             } else {
                 props.handleLogAndRole(true, response.data.role);
                 goToProfil();
             }
         });
     };
-
-    /**
-     * Retourne un CAPTCHA que l'utilisateur doit vérifier au moment de l'inscription.
-     */
-    function getCaptcha() {
-        Axios.get("https://pc-et-associe-node.herokuapp.com" + "/captcha", {
-        }).then((response) => {
-            if (response.data) {
-                setImgCaptcha(response.data);
-            }
-        });
-    }
 }
 
 
