@@ -52,7 +52,6 @@ function App() {
   function getLogin() {
     Axios.get(process.env.REACT_APP_DOMAIN + "/login", {
     }).then((response) => {
-      console.log("isLoggedIn : " + response.data.loggedIn)
       handleLogAndRole(response.data.loggedIn, response.data.hasRole);
     });
   }

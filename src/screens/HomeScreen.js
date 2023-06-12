@@ -28,6 +28,8 @@ function HomeScreen(props) {
     const goToProfil = () => { navigate("/profil"); }
     const goToInscription = () => { navigate("/inscription"); }
 
+    console.log(imgCaptcha)
+
     return (
         <div className='w-1/3'>
             <div className="flex flex-col white-bx ">­­
