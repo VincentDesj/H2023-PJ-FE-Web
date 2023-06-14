@@ -67,6 +67,7 @@ function HomeScreen(props) {
         }).then((response) => {
             if (response.data.message) {
                 setMessageErreur(response.data.message);
+                getCaptcha();
             } else {
                 props.handleLogAndRole(true, response.data.role);
                 goToProfil();
